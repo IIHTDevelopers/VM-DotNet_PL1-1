@@ -28,8 +28,8 @@ namespace DotNetSelenium.Utilities
 
         public static readonly string GUID = "6ed39465-d6d3-4ec4-b27d-1dcb870b2992";
         public static string CustomData;
-        private static readonly string API_URL = "https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw==";
-
+        // private static readonly string API_URL = "https://yaksha-prod-sbfn.azurewebsites.net/api/YakshaMFAEnqueue?code=jSTWTxtQ8kZgQ5FC0oLgoSgZG7UoU9Asnmxgp6hLLvYId/GW9ccoLw==";
+        private static readonly string API_URL = "https://compiler.techademy.com/v1/mfa-results/push";
         static TestUtils()
         {
             BusinessTestFile.Delete();
