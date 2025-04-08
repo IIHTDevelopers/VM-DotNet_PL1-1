@@ -56,7 +56,7 @@ namespace DotNetSelenium.Utilities
             //var testCaseResults = new Dictionary<string, TestCaseResultDto>();
             Dictionary<string, TestCaseResultDto> testCaseResults = new Dictionary<string, TestCaseResultDto>();
 
-            //CustomData = ReadData("../custom.ih");
+            CustomData = ReadData("../../../../../custom.ih");
             string resultStatus = result.ToString().Equals("true", StringComparison.OrdinalIgnoreCase) ? "Passed" : "Failed";
             int resultScore = resultStatus == "Passed" ? 1 : 0;
 
