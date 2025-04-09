@@ -28,12 +28,23 @@ namespace DotNetSelenium.PageObjects
         private IWebElement UpdateTDSButton => driver.FindElement(By.CssSelector("button#btn_GroupDistribution"));
         private IWebElement TDSValueInTable => driver.FindElement(By.CssSelector("div[col-id='TDSPercent']"));
 
-        /// <summary>
-        /// @Test9
-        /// @description This method updates the TDS% for a specific employee and verifies the updated value in the table.
-        /// @expected
-        /// The updated TDS% value is displayed correctly in the corresponding row of the table.
-        /// </summary>
+
+/**
+*@Test9
+@description : Edits the TDS percentage for a specific employee and verifies that the updated value is reflected in the UI.
+ *
+ * Steps:
+ * 1. Reads the employee name from a JSON test data file.
+ * 2. Navigates to the Incentive module and selects the Settings tab.
+ * 3. Searches for the employee using the search bar.
+ * 4. Clicks the "Edit TDS%" button to open the TDS input modal.
+ * 5. Clears the existing value and enters a new random TDS percentage.
+ * 6. Clicks the "Update TDS" button to save changes.
+ * 7. Repeats the search and retrieves the updated TDS value from the table.
+ * 8. Verifies that the displayed TDS value matches the newly entered value.
+ *
+ * @returns : True if the updated TDS percentage is correctly reflected; otherwise, throws an exception.
+ */
         public bool EditTDSForEmployee()
         {
             // Read JSON file for employee names

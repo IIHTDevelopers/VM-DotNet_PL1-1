@@ -25,13 +25,22 @@ namespace DotNetSelenium.PageObjects
         private IWebElement DoneButton => driver.FindElement(By.XPath("//button[text()='Done']"));
         private IWebElement UploadedImg => driver.FindElement(By.CssSelector("div.wrapper img"));
 
-        /// <summary>
-        /// @Test8
-        /// @description This method verifies the successful upload of a profile picture for a patient 
-        /// by navigating to the "Register Patient" tab and completing the upload process.
-        /// @expected
-        /// Verify that the uploaded image is displayed successfully in the patient's profile.
-        /// </summary>
+/**
+ * @Test8
+ * @description : This method uploads a profile picture for a patient by navigating to the "Register Patient" tab
+ *              and completing the image upload workflow.
+ * @expected : The uploaded profile image should be visible on the patient registration screen, confirming success.
+ *
+ * Steps:
+ * 1. Click on the "Patient" link from the navigation menu.
+ * 2. Select the "Register Patient" tab to open the registration section.
+ * 3. Click on the profile picture icon followed by the "New Photo" button.
+ * 4. Upload a test image from the predefined directory.
+ * 5. Wait for the image to upload and click the "Done" button to finalize.
+ * 6. Verify that the uploaded image is displayed on the UI.
+ *
+ * @returns : True if the image is displayed after upload; otherwise, throws an exception.
+ */
         public bool UploadProfilePicture()
         {
             string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestImage", "UploadImage.png");

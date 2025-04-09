@@ -29,12 +29,23 @@ namespace DotNetSelenium.PageObjects
         private IWebElement ActivateSuccessMessage => driver.FindElement(By.XPath("//p[contains(text(),'success')]/../p[text()='Activated.']"));
         private IWebElement DeactivateSuccessMessage => driver.FindElement(By.XPath("//p[contains(text(),'success')]/../p[text()='Deactivated.']"));
 
-        /// <summary>
-        /// @Test10
-        /// @description This method verifies disabling and enabling a price category code in the table.
-        /// @expected
-        /// A success message is displayed for both actions: "Deactivated." for disabling and "Activated." for enabling.
-        /// </summary>
+/**
+ * @Test10
+ * @description This method disables and then re-enables a price category (e.g., "NHIF-1") via the Price Category tab,
+ *              verifying that appropriate success messages are displayed for both actions.
+ * @expected
+ * Success messages "Deactivated." and "Activated." should be displayed after each corresponding action.
+ *
+ * Steps:
+ * 1. Click on the "Settings" link to navigate to the settings module.
+ * 2. Click on the "More..." dropdown and select the "Price Category" tab.
+ * 3. Click on the "Disable" button for the code "NHIF-1".
+ * 4. Verify that the message "Deactivated." appears after disabling.
+ * 5. Click on the "Enable" button for the same code.
+ * 6. Verify that the message "Activated." appears after enabling.
+ *
+ * @returns Returns the final activation message if successful; otherwise, the test throws an exception.
+ */
         public String TogglePriceCategoryStatus()
         {
             // Step 1: Navigate to Settings

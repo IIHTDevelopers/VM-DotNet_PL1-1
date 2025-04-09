@@ -23,10 +23,20 @@ namespace DotNetSelenium.PageObjects
         public By AddNewOtButton => By.CssSelector("input[value='Add New OT']");
         public By ModalHeading => By.CssSelector("div.modelbox-div");
 
-        /**
-         * @Test2
-         * @description This method verifies and handles the alert for OT booking without patient selection.
-         */
+ /**
+ * @Test2
+ * @description : Attempts to book an OT (Operation Theatre) without selecting a patient and verifies the alert message.
+ *
+ * Steps:
+ * 1. Navigates to the Operation Theatre module.
+ * 2. Clicks on the "New OT Booking" button to open the booking modal.
+ * 3. Validates that the OT booking modal is displayed.
+ * 4. Clicks the "Add New OT" button without selecting a patient.
+ * 5. Waits for the browser alert and captures the alert message.
+ * 6. Accepts the alert to close it.
+ *
+ * @returns : The text of the alert message shown when no patient is selected during OT booking.
+ */
         public String HandleOtBookingAlert()
         {
             // Click on the Operation Theatre link

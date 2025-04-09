@@ -27,10 +27,22 @@ namespace DotNetSelenium.PageObjects
         public By ShowPatient => By.XPath("//button[contains(text(),'Show Patient')]");
         public By VisitTypeColumn => By.XPath("//div[text()=\"New\"]");
 
-        /**
-         * @Test1
-         * @description This method verifies the 'Visit Type' dropdown functionality and validates 'New Visit' patients.
-         */
+
+
+/**
+ * @Test1
+ * Selects "New Patient" from the Visit Type dropdown and verifies that all results reflect "New Visit" in the Visit Type column.
+ *
+ * Steps:
+ * 1. Clicks on the Appointment link and selects the first available counter item (if present).
+ * 2. Navigates to the Appointment Booking List page.
+ * 3. Selects "New Patient" from the Visit Type dropdown.
+ * 4. Sets the From Date to "01-01-2024" to filter results.
+ * 5. Clicks the "Show Patient" button to retrieve appointment data.
+ * 6. Validates that the Visit Type column displays only "New Visit" entries.
+ *
+ * @returns True if all entries in the Visit Type column contain "New"; otherwise, returns false.
+ */
         public bool VerifyVisitTypeDropdown()
         {
             bool isVisitType = false;

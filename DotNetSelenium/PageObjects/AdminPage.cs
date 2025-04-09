@@ -21,11 +21,16 @@ namespace DotNetSelenium.PageObjects
         private IWebElement UserProfileHeader => driver.FindElement(By.CssSelector("a[routerlink='UserProfile']"));
 
         /**
-        * @Test7
-        * @description This method verifies that the user is successfully navigated to the "User Profile" page 
-        *              after selecting the "My Profile" option from the Admin dropdown.
-        * @expected
-        * Verify that the user is redirected to the "User Profile" page and the page header or title confirms this.
+        *@Test7
+        * Navigates to the "User Profile" page via the Admin dropdown and verifies successful navigation.
+        *
+        * Steps:
+        * 1. Clicks on the Admin dropdown in the header.
+        * 2. Selects the "My Profile" option from the dropdown menu.
+        * 3. Waits for the User Profile page to load.
+        * 4. Retrieves and returns the header text of the User Profile page for validation.
+        *
+        * @returns The header text from the User Profile page, used to assert successful navigation.
         */
         public String VerifyUserProfileNavigation()
         {

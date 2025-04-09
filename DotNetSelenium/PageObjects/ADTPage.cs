@@ -28,13 +28,21 @@ namespace DotNetSelenium.PageObjects
         private IWebElement UpdateButton => driver.FindElement(By.XPath("//button[text()='Update']"));
         private IWebElement FieldErrorMessage => driver.FindElement(By.XPath("//span[text()='Select doctor from the list.']"));
         private IList<IWebElement> CounterItems => driver.FindElements(By.CssSelector("div.counter-item"));
-
-        /// <summary>
-        /// @Test14
-        /// @description This test verifies that the error message "Select doctor from the list." is displayed 
-        ///              when the user attempts to update the doctor without selecting a value.
-        /// @expected The error message "Select doctor from the list." is shown near the field.
-        /// </summary>
+        
+        /**
+            * @Test14
+            * Attempts to update a patient's doctor without selecting one and verifies that the appropriate validation message is shown.
+            *
+            * Steps:
+            * 1. Reads a test patient name from a JSON file.
+            * 2. Navigates to the ADT section and selects the first available counter item.
+            * 3. Opens the "Admitted Patients" tab and searches for the patient.
+            * 4. Opens the "Change Doctor" modal using the More Options ("...") button.
+            * 5. Clicks the "Update" button without selecting a doctor from the list.
+            * 6. Verifies that the error message "Select doctor from the list." is displayed.
+            *
+            * @returns True if the error message is displayed; otherwise, throws an exception.
+        */
         public bool VerifyFieldLevelErrorMessage()
         {
             // Read JSON file for employee names
